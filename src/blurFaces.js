@@ -58,7 +58,7 @@ export default class BlurFaces extends Component {
           imaskCtx2.shadowBlur = 10; 
           imaskCtx2.drawImage(imaskCanvas,0,0);  
 
-          // Clear visible canvas then draw orignal image to it and then add the blurred images
+          // Clear visible canvas then draw original image to it and then add the blurred images
           outputCtx.clearRect(0,0, image.width, image.height);
           outputCtx.drawImage(newImage, 0, 0);
           outputCtx.drawImage(imaskCanvas2, 0, 0);
@@ -101,7 +101,7 @@ export default class BlurFaces extends Component {
           outputCtx.drawImage(newImage, 0, 0);
 
           // Draw pixelated faces to canvas
-          this.getFaces(data).forEach(face => outputCtx.putImageData(hiddenCtx.getImageData(face.x, face.y, face.w, face.h), face.x, face.y))
+          this.getFaces(data).forEach(face => outputCtx.putImageData(hiddenCtx.getImageData(face.x, face.y, face.w, face.h), face.x, face.y));
         }
       }).catch(err => {
         console.log(err)
