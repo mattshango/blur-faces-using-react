@@ -19,8 +19,8 @@ export default class App extends Component {
 
     this.facesoft = new Facesoft(process.env.REACT_APP_FACESOFT_API_KEY);
 
-    this.handleChange = this.handleChange.bind(this)
-    this.handleClick = this.handleClick.bind(this)
+    this.handleChange = this.handleChange.bind(this);
+    this.handleClick = this.handleClick.bind(this);
   }
   
 
