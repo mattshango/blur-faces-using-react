@@ -34,7 +34,7 @@ export default class BlurFaces extends Component {
           // Set global composite operation to destination in
           imaskCtx.globalCompositeOperation = "destination-in";
           
-          // Draw pixelated faces to inverted mask canvas (x,y,w,h are modified due to blurring and feathering)
+          // Draw blurred faces to inverted mask canvas (x,y,w,h are modified due to blurring and feathering)
           this.getFaces(data).forEach((face, i) => {
             // Determine the blur amount by width of face
             let blurAmount = threshold
