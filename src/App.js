@@ -17,8 +17,7 @@ export default class App extends Component {
       smooth: true,
     }
 
-    this.uploadedImage = React.createRef();
-    this.facesoft = new Facesoft(process.env.REACT_APP_FACESOFT_API_KEY)
+    this.facesoft = new Facesoft(process.env.REACT_APP_FACESOFT_API_KEY);
 
     this.handleChange = this.handleChange.bind(this)
     this.handleClick = this.handleClick.bind(this)
@@ -98,12 +97,14 @@ export default class App extends Component {
                 onChange={this.handleChange}
                 accept="image/x-png,image/gif,image/jpeg"
               />
-              <img 
-                src={image.uri} 
-                alt="upload" 
-                ref={this.uploadedImage}
-                style={{maxWidth: "100%", margin: "10px 0px", opacity: `${image.hasOwnProperty("uri") ? 100 : 0}`}}
-              />
+              {
+                image.hasOwnProperty("uri") && 
+                <img 
+                  src={image.uri} 
+                  alt="upload" 
+                  style={{maxWidth: "100%", margin: "10px 0px"}}
+                />
+              }
             </div>
             {
               image.hasOwnProperty("uri") && 
